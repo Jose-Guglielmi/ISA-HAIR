@@ -1,0 +1,14 @@
+<div class="contenedor-producto">
+  <h2>{{ nombre }}</h2>
+  <img src="{{ imagen }}" alt="{{ nombre }}" (click)="enviar()" />
+  <p>{{ descripcion }}</p>
+  <p>Precio ${{ precio }}</p>
+  <button (click)="agregarAlCarrito()">
+    <app-icon
+      [icono]="'carrito-de-compra-anadir.svg'"
+      [heightAndWidth]="25"
+      [marginRight]="7"
+    ></app-icon>
+    Añadir al carrito
+  </button>
+</div>

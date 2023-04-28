@@ -1,0 +1,6 @@
+<div class="modal-img" [ngClass]="{ activo: activo }">
+  <img src="{{ img }}" alt="{{ nombre }}" />
+  <button (click)="cerrarModal()">
+    <app-icon [icono]="'cruz.svg'"></app-icon>
+  </button>
+</div>

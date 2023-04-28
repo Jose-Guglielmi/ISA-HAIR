@@ -1,0 +1,20 @@
+<div class="contenedor-producto-carrito">
+  <div class="contenedor-info-producto-carrito">
+    <img [src]="imagen" alt="imagen producto" class="imagen-producto-carrito" />
+    <p class="nombre-producto-carrito">{{ nombre }}</p>
+    <p class="precio-producto-carrito">$ {{ precio }}</p>
+  </div>
+  <div class="contenedor-controles">
+    <h2>cantidad</h2>
+    <button>
+      <app-icon [heightAndWidth]="30" [icono]="'mas.svg'"></app-icon>
+    </button>
+    <h2>{{ cantidad }}</h2>
+    <button>
+      <app-icon [heightAndWidth]="30" [icono]="'menos.svg'"></app-icon>
+    </button>
+    <button>
+      <app-icon [heightAndWidth]="30" [icono]="'basura.svg'"></app-icon>
+    </button>
+  </div>
+</div>

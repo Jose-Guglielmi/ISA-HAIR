@@ -1,0 +1,21 @@
+<div class="contenedor-productos">
+  <div *ngFor="let producto of productos">
+    <app-producto
+      [id]="producto.id"
+      [nombre]="producto.nombre"
+      [imagen]="producto.src"
+      [descripcion]="producto.descripcion"
+      [precio]="producto.precio"
+      (imgSelect)="abrirModal($event)"
+      [subject]="subject"
+    ></app-producto>
+  </div>
+  <app-modal-img
+    [img]="img"
+    [activo]="activo"
+    [nombre]="nombre"
+    (modal)="cerrarModal($event)"
+  ></app-modal-img>
+
+  <app-modal [subject]="subject"></app-modal>
+</div>

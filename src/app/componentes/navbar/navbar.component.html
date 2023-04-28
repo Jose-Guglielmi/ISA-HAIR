@@ -1,0 +1,36 @@
+<div class="contenedor-navbar">
+  <app-icon [icono]="'I-H.svg'" [heightAndWidth]="30"></app-icon>
+  <h1>ISA-HAIR</h1>
+  <app-btn-navbar
+    (clickEvent)="recibir($event)"
+    [abrirMenu]="abrirMenu"
+  ></app-btn-navbar>
+
+  <div
+    class="contenedor-navbar-links"
+    [ngClass]="{ open: abrirMenu }"
+    (click)="close()"
+  >
+    <a
+      routerLink="/inicio"
+      routerLinkActive="active"
+      class="link"
+      (click)="close()"
+      >Inicio</a
+    >
+    <a
+      routerLink="/productos"
+      routerLinkActive="active"
+      class="link"
+      (click)="close()"
+      >Productos</a
+    >
+    <a
+      routerLink="/carrito"
+      routerLinkActive="active"
+      class="link"
+      (click)="close()"
+      >Carrito</a
+    >
+  </div>
+</div>

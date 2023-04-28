@@ -1,0 +1,38 @@
+.contendor-modal {
+  position: fixed;
+  bottom: 50px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.contenedor-mensaje {
+  background-color: #000000;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  animation: modalAnimation 0.5s infinite alternate;
+}
+
+h2 {
+  color: #ffffff;
+  font-size: 20px;
+  margin: 0;
+}
+
+@keyframes modalAnimation {
+  0% {
+    outline: 1px solid rgb(255, 255, 255);
+  }
+  100% {
+    outline: 5px solid rgb(255, 255, 255);
+  }
+}
+
+.open {
+  opacity: 1;
+}
