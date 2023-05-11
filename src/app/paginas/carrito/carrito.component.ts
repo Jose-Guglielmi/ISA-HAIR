@@ -10,7 +10,11 @@ export class CarritoComponent {
   public modificarProductos: modificarProductos = new modificarProductos();
   public carrito: any = '';
 
-  ngOnInit() {
+  ngDoCheck() {
+    this.actualizarCarrito();
+  }
+
+  actualizarCarrito() {
     this.carrito = this.modificarProductos.getProducto(
       this.modificarProductos.localStorageName
     );

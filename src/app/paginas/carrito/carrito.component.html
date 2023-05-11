@@ -1,9 +1,11 @@
-<div class="contenedor-carrito" *ngFor="let producto of carrito">
-  <app-producto-carrito
-    [id]="producto.id"
-    [imagen]="producto.imagen"
-    [nombre]="producto.nombre"
-    [precio]="producto.precio"
-    [cantidad]="producto.cantidad"
-  ></app-producto-carrito>
+<div class="contenedor-carrito">
+  <div *ngFor="let producto of carrito">
+    <app-producto-carrito
+      [id]="producto.id"
+      [imagen]="producto.imagen"
+      [nombre]="producto.nombre"
+      [precio]="producto.precio"
+      [cantidad]="producto.cantidad"
+    ></app-producto-carrito>
+  </div>
 </div>

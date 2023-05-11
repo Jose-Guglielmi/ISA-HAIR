@@ -25,7 +25,6 @@ export class ModalComponent {
   ngOnInit() {
     this.subject.subscribe((text: any) => {
       this.infos = text;
-      console.log(this.infos);
       this.cerrarModal();
     });
   }

@@ -48,23 +48,22 @@ class modificarProductos {
     //verifico si el producto ya existe en el carrito
     for (let i = 0; i < carrito.length; i++) {
       if (carrito[i].id === data.id && aumento) {
-        carrito[i].cantidad += data.cantidad;
-        carrito[i].total += data.precio * data.cantidad;
+        carrito[i].cantidad += 1;
+        carrito[i].total = data.precio * data.cantidad;
         existe = true;
         localStorage.setItem(nombreStorage, JSON.stringify(carrito));
         this.todoOk = this.state.actualizado;
         break;
-      } else {
-        if (carrito[i].cantidad >= 1) {
-          carrito[i].cantidad -= data.cantidad;
-          carrito[i].total -= data.precio * data.cantidad;
-          existe = true;
-          localStorage.setItem(nombreStorage, JSON.stringify(carrito));
-          this.todoOk = this.state.actualizado;
-          break;
-        } else {
+      } else if (carrito[i].id === data.id && !aumento) {
+        carrito[i].cantidad = carrito[i].cantidad - 1;
+        carrito[i].total = data.precio * data.cantidad;
+        existe = true;
+        localStorage.setItem(nombreStorage, JSON.stringify(carrito));
+        this.todoOk = this.state.actualizado;
+        if (carrito[i].cantidad === 0) {
           this.deleteProducto(data.id, nombreStorage);
           this.todoOk = this.state.eliminado;
+          break;
         }
       }
     }

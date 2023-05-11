@@ -1,19 +1,20 @@
 <div class="contenedor-producto-carrito">
   <div class="contenedor-info-producto-carrito">
+    <h2 class="nombre-producto-carrito">{{ nombre }}</h2>
     <img [src]="imagen" alt="imagen producto" class="imagen-producto-carrito" />
-    <p class="nombre-producto-carrito">{{ nombre }}</p>
-    <p class="precio-producto-carrito">$ {{ precio }}</p>
+    <p>Precio: $ {{ precio }}</p>
+    <p>SubPrecio: $ {{ precio * cantidad }}</p>
   </div>
+  <h2 class="cantidad">cantidad</h2>
   <div class="contenedor-controles">
-    <h2>cantidad</h2>
-    <button>
+    <button (click)="sumar()">
       <app-icon [heightAndWidth]="30" [icono]="'mas.svg'"></app-icon>
     </button>
     <h2>{{ cantidad }}</h2>
-    <button>
+    <button (click)="restar()">
       <app-icon [heightAndWidth]="30" [icono]="'menos.svg'"></app-icon>
     </button>
-    <button>
+    <button (click)="eliminar()">
       <app-icon [heightAndWidth]="30" [icono]="'basura.svg'"></app-icon>
     </button>
   </div>
